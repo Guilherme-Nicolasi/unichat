@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background: #f7f7f7ec;
+  padding: 0 1rem;
+}
+
+.wrapper {
+  overflow: hidden;
+  background: #FFF;
+  max-width: 40rem;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.outside {
+  display: flex;
+  max-width: 45rem;
+}
+
+.form {
+  width: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transition: all .6s cubic-bezier(0.68, -0,55, 0.265, 1.55);
+  -webkit-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  padding: 2rem 2rem;
+}
+
+.form:first-child {
+  background: #FFF;
+}
+
+.form:last-child {
+  display: flex;  
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  border-radius: 0 1rem 1rem 0;
+  margin: .5rem .5rem .5rem 0;
+}
+
+.login {
+  background-image: url("banner1.png");
+}
+
+.signup {
+  background-image: url("banner3.png");
+}
+
+.form:last-child .banner-text {
+  width: 100%;
+  border-radius: 0 1rem 1rem 0;
+  background: rgba(0, 0, 0, 0.2);
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 .8rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form:last-child .banner-text h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.form:last-child .banner-text p {
+  -webkit-text-stroke: .2px;
+  color: white;
+  font-size: 1rem;
+}
+
+.form header {
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.form header svg {
+  margin-bottom: 1rem;
+}
+
+.form header h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.form header p {
+  font-size: 0.8rem;
+  color: #67676a;
+}
+
+.form form .error-text {
+  color: #721c24;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 5px;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.form form .name-details {
+  display: flex;
+}
+
+.form .name-details .field:first-child {
+  margin-right: 4px;
+}
+
+.form .name-details .field:last-child {
+  margin-left: 4px;
+}
+
+.form form .field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form form .recovery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 0.2rem;
+}
+
+.form form .recovery label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form form .recovery input {
+  margin-right: .2rem;
+  width: .7rem;
+  height: .7rem;
+  cursor: pointer;
+  border-radius: .1rem;
+}
+
+.form form .recovery :where(a, label) {
+  font-size: .7rem;
+}
+
+.form form .recovery label {
+  color: #67676a;
+}
+
+.form form .recovery a {
+  color: rgb(15,165,250);
+}
+
+.form form .recovery a:hover {
+  text-decoration: underline;
+}
+
+.form form .input {
+  margin-bottom: .5rem;
+}
+
+.form form .input input {
+  height: 40px;
+  width: 100%;
+  font-size: .8rem;
+  padding: 0 1rem;
+  border-radius: 5rem;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+}
+
+.form form .input input:focus {
+  border-bottom-color: rgb(15, 165, 250);
+}
+
+.form form .field input {
+  outline: none;
+}
+
+.form form .image {
+  height: 65px;
+  display: flex;
+  margin-bottom: .5rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1.5px dashed #67676a;
+  cursor: pointer;
+}
+
+.form form .image :where(i, p) {
+  color: #333;
+}
+
+.form form .image i {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: rgb(15, 165, 250);
+}
+
+.form form .image p {
+  font-size: .8rem;
+  color: #67676a;
+}
+
+.form form .button {
+  margin-top: 1.8rem;
+}
+
+.form form .button input {
+  height: 45px;
+  border: none;
+  color: #fff;
+  font-size: .9rem;
+  background: rgb(15, 165, 250);
+  border-radius: 5rem;
+  cursor: pointer;
+  margin-top: .4rem;
+}
+
+.form form .button input:hover {
+  background: rgb(44, 171, 245);
+}
+
+.form form .field i.active::before {
+  color: #333;
+  content: "\f070";
+}
+
+.form .link {
+  text-align: center;
+  padding: .5rem;
+  font-size: .8rem;
+}
+
+.form .link a {
+  color: rgb(15, 165, 250);
+}
+
+.form .link a:hover {
+  text-decoration: underline;
+}
+
+.users {
+  width: 80rem;
+  padding: 25px 30px;
+  padding-bottom: 25rem;
+}
+
+.users header, .users-list a {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+  justify-content: space-between;
+}
+
+.wrapper img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.users header img {
+  height: 50px;
+  width: 50px;
+}
+
+:is(.users, .users-list) .content {
+  display: flex;
+  align-items: center;
+}
+
+:is(.users, .users-list) .content .details {
+  color: #000;
+  margin-left: 20px;
+}
+
+:is(.users, .users-list) .details span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.users header .logout {
+  display: block;
+  background: #333;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 17px;
+}
+
+.users .search {
+  margin: 20px 0;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.users .search .text {
+  font-size: 18px;
+}
+
+.users .search input {
+  position: absolute;
+  height: 42px;
+  width: calc(100% - 50px);
+  font-size: 16px;
+  padding: 0 13px;
+  border: 1px solid #e6e6e6;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.users .search input.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.users .search button {
+  position: relative;
+  z-index: 1;
+  width: 47px;
+  height: 42px;
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+  background: #fff;
+  color: #333;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.2s ease;
+}
+
+.users .search button.active {
+  background: #333;
+  color: #fff;
+}
+
+.search button.active i::before {
+  content: '\f00d';
+}
+
+.users-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+:is(.users-list, .chat-box)::-webkit-scrollbar {
+  width: 0px;
+}
+
+.users-list a {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  padding-right: 15px;
+  border-bottom-color: #f1f1f1;
+}
+
+.users-list a:last-child {
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+
+.users-list a img {
+  height: 40px;
+  width: 40px;
+}
+
+.users-list a .details p {
+  color: #67676a;
+}
+
+.users-list a .status-dot {
+  font-size: 12px;
+  color: #468669;
+  padding-left: 10px;
+}
+
+.users-list a .status-dot.offline {
+  color: #ccc;
+}
+
+.chat-area header {
+  display: flex;
+  align-items: center;
+  padding: 18px 30px;
+}
+
+.chat-area header .back-icon {
+  color: #333;
+  font-size: 18px;
+}
+
+.chat-area header img {
+  height: 45px;
+  width: 45px;
+  margin: 0 15px;
+}
+
+.chat-area header .details span {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.chat-box {
+  position: relative;
+  min-height: 500px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 10px 30px 20px 30px;
+  background: #f7f7f7;
+  box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
+              inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+
+.chat-box .text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: calc(100% - 50px);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.chat-box .chat {
+  margin: 15px 0;
+}
+
+.chat-box .chat p {
+  word-wrap: break-word;
+  padding: 8px 16px;
+  box-shadow: 0 0 32px rgb(0 0 0 / 8%),
+              0rem 16px 16px -16px rgb(0 0 0 / 10%);
+}
+
+.chat-box .outgoing {
+  display: flex;
+}
+
+.chat-box .outgoing .details {
+  margin-left: auto;
+  max-width: calc(100% - 130px);
+}
+
+.outgoing .details p {
+  background: #333;
+  color: #fff;
+  border-radius: 18px 18px 0 18px;
+}
+
+.chat-box .incoming {
+  display: flex;
+  align-items: flex-end;
+}
+
+.chat-box .incoming img {
+  height: 35px;
+  width: 35px;
+}
+
+.chat-box .incoming .details {
+  margin-right: auto;
+  margin-left: 10px;
+  max-width: calc(100% - 130px);
+}
+
+.incoming .details p {
+  background: #fff;
+  color: #333;
+  border-radius: 18px 18px 18px 0;
+}
+
+.typing-area {
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.typing-area input {
+  height: 45px;
+  width: calc(100% - 58px);
+  font-size: 16px;
+  padding: 0 13px;
+  border: 1px solid #e6e6e6;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.typing-area button {
+  color: #fff;
+  width: 55px;
+  border: none;
+  outline: none;
+  background: #333;
+  font-size: 19px;
+  cursor: pointer;
+  opacity: 0.7;
+  pointer-events: none;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.3s ease;
+}
+
+.typing-area button.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 594px) {
+  body {
+    padding: 0;
+  }
+
+  .outside {
+    max-width: 100vw;
+    min-height: 100vh;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form:last-child {
+    display: none;
+  }
+
+  .form form .input {
+    margin-bottom: 1rem;
+  }
+
+  .form form .button {
+    margin-top: 4rem;
+  }
+
+  .form form .button input {
+    font-size: 1.4rem;
+  }
+
+  .form .link {
+    padding: 2rem 0 0 0;
+  }
+
+  .form, .users {
+    padding: 20px;
+  }
+
+  .users {
+    height: 100vh;
+    margin: 0;
+  }
+
+  .form header {
+    text-align: center;
+  }
+
+  .form header svg {
+    margin: 4rem 0;
+  }
+  
+  .form header h2 {
+    font-size: 2rem;;
+  }
+  
+  .form header p {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .form form .name-details {
+    flex-direction: column;
+  }
+
+  .form .name-details .field:first-child {
+    margin-right: 0px;
+  }
+
+  .form .name-details .field:last-child {
+    margin-left: 0px;
+  }
+
+  .users header img {
+    height: 45px;
+    width: 45px;
+  }
+
+  .users header .logout {
+    padding: 6px 10px;
+    font-size: 16px;
+  }
+
+  :is(.users, .users-list) .content .details {
+    margin-left: 15px;
+  }
+
+  .users-list a {
+    padding-right: 10px;
+  }
+
+  .chat-area header {
+    padding: 15px 20px;
+  }
+
+  .chat-box {
+    min-height: 400px;
+    padding: 10px 15px 15px 20px;
+  }
+
+  .chat-box .chat p {
+    font-size: 15px;
+  }
+
+  .chat-box .outogoing .details {
+    max-width: 230px;
+  }
+
+  .chat-box .incoming .details {
+    max-width: 265px;
+  }
+
+  .incoming .details img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .chat-area form {
+    padding: 20px;
+  }
+
+  .chat-area form input {
+    height: 40px;
+    width: calc(100% - 48px);
+  }
+
+  .chat-area form button {
+    width: 45px;
+  }
+}
